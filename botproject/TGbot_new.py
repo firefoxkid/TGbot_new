@@ -1,16 +1,4 @@
-# import json
-# import logging
-# import os
-# import time
-# from logging.handlers import RotatingFileHandler
-
-# import requests
-# import telegram
-# from dotenv import load_dotenv
-
-
 import datetime
-import math
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import (
@@ -24,23 +12,8 @@ BIRTH_YEAR = 1
 BIRTH_MONTH = 2
 BIRTH_DAY = 3
 
-# function to handle the /start command
-# def start(update, context):
-#     first_name = update.message.chat.first_name
-#     last_name = update.message.chat.first_name
-#     update.message.reply_text(f"Привет, {first_name} {last_name}, рад познакомиться, я Бот-Валера!")
-#     start_getting_birthday_info(update, context)
 
 def start(update, context):
-    # keyboard = [
-    #     [
-    #         InlineKeyboardButton("Старт", callback_data='/start'),
-    #         InlineKeyboardButton("Помощь", callback_data='/help'),
-    #     ],
-    #     [InlineKeyboardButton("Сколько дней я живу", callback_data='/life_long')],
-    # ]
-    # reply_markup = InlineKeyboardMarkup(keyboard)
-    # update.message.reply_text('Пожалуйста, выберите:', reply_markup=reply_markup)
     first_name = update.message.chat.first_name
     last_name = update.message.chat.first_name
     update.message.reply_text(f"Привет, {first_name} {last_name}, рад познакомиться, я Бот-Валера!")
@@ -60,7 +33,6 @@ def make_keyborad(update, _):
 def button(update, _):
     query = update.callback_query
     variant = query.data
-
     # `CallbackQueries` требует ответа, даже если 
     # уведомление для пользователя не требуется, в противном
     #  случае у некоторых клиентов могут возникнуть проблемы. 
@@ -166,7 +138,7 @@ def calculate_life(birthdate):
 
 def main():
     """alex_long_life_bot"""
-    TOKEN = '5762211771:AAFTXEqBHWcND43kTxPRrXF6R6a8Xz0JEB8'
+    TOKEN = 'в эти скобки вписать апикей своего ботинка или настроить на машине енв как в троке ниже'
     # TOKEN = os.getenv('TELEGRAM_TOKEN_LIFEBOT')
     # create the updater, that will automatically create also a dispatcher and a queue to
     # make them dialoge
